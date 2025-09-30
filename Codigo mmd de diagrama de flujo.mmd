@@ -1,0 +1,49 @@
+---
+config:
+  theme: neo-dark
+  layout: fixed
+---
+%% Gestor finanzas personales.
+flowchart TB
+    A(["Inicio"]) --> B{"¿El usuario tiene cuenta?"}
+    B -- Sí --> C["Iniciar sesión"]
+    B -- No --> D["Registrarse"]
+    C --> E{"¿Credenciales correctas?"}
+    E -- No --> F["Mensaje de error / volver a login"]
+    E -- Sí --> G["Menú principal"]
+    D --> H["Completar datos de registro"]
+    H --> I["Crear cuenta"]
+    I --> C
+    G --> J["Registrar movimiento"] & K["Consultar finanzas"] & L["Modificar movimiento"] & M["Eliminar movimiento"] & N["Generar reporte"] & P["Metas financieras"] & O["Cerrar sesión"]
+    J --> J0{"¿Base de datos vacía?"}
+    J0 -- Sí --> J01["Solo se permite registrar Ingresos"]
+    J0 -- No --> J1["Ingresar gastos o ingresos"]
+    J01 --> J2["Guardar en base de datos"]
+    J1 --> J2
+    J2 --> J3["Actualizar balance general"]
+    K --> K0{"¿Seleccionó periodo (mes/semana)?"}
+    K0 -- No --> K01["Mostrar mensaje de validación"]
+    K0 -- Sí --> K1["Mostrar lista de movimientos"]
+    K1 --> K2["Filtrar por categoría / fecha"] & K3["Consultar un movimiento por ID"]
+    L --> L0{"¿Base de datos vacía?"}
+    L0 -- Sí --> L01["No se puede modificar (BD vacía)"]
+    L0 -- No --> L1["Seleccionar movimiento existente"]
+    L1 --> L2["Editar y actualizar en la base de datos"]
+    L2 --> L3["Recalcular balance general"]
+    M --> M0{"¿Base de datos vacía?"}
+    M0 -- Sí --> M01["No se puede eliminar (BD vacía)"]
+    M0 -- No --> M1["Seleccionar movimiento existente"]
+    M1 --> M2["Confirmar eliminación"]
+    M2 --> M3["Recalcular balance general"]
+    N --> N0{"¿Seleccionó periodo (mes/semana)?"}
+    N0 -- No --> N01["Mostrar mensaje de validación"]
+    N0 -- Sí --> N1["Descargar en PDF"] & N2["Descargar en Imagen"]
+    P --> P0{"¿Base de datos vacía?"}
+    P0 -- Sí --> P01["No se pueden crear metas (BD vacía)"]
+    P0 -- No --> P1["Opciones de metas"]
+    P1 --> P2["Crear meta financiera"] & P3["Consultar metas"] & P4["Modificar meta"] & P5["Eliminar meta"] & n1["Untitled Node"]
+    P2 --> P6["Guardar meta en BD"]
+    P3 --> P7["Mostrar lista de metas"]
+    P4 --> P8["Seleccionar y editar meta"]
+    P5 --> P9["Seleccionar y eliminar meta"]
+    P01 --> n2["Untitled Node"]
