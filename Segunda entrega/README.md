@@ -1,11 +1,11 @@
-# Gestor de Finanzas - PRoyecto De SOftware - Corporacion Universitaria Iberoamericana
+# Gestor de Finanzas - Proyecto De SOftware - Corporacion Universitaria Iberoamericana
 
 Aplicación web para la gestión de **ingresos, gastos y balance personal**, desarrollada con el stack **MERN (MongoDB, Express, React, Node.js)**.  
 Permite a los usuarios autenticarse, registrar movimientos financieros y visualizar su balance de manera sencilla.
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+##  Arquitectura del Sistema
 
 El proyecto sigue una **arquitectura cliente-servidor** basada en el stack MERN:
 
@@ -17,28 +17,28 @@ Esta separación permite un desarrollo modular, escalable y mantenible.
 
 ---
 
-## ⚙️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
-### 🖥️ Frontend
+###  Frontend
 - React.js  
 - Context API  
 - Axios  
 - React Router DOM  
 - CSS / Tailwind  
 
-### ⚙️ Backend
+###  Backend
 - Node.js  
 - Express.js  
 - Mongoose  
 - JSON Web Tokens (JWT)  
 - bcrypt.js  
 
-### 🗄️ Base de Datos
+###  Base de Datos
 - MongoDB (Atlas o local)
 
 ---
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ### Frontend
 /Frontend
@@ -85,13 +85,9 @@ Esta separación permite un desarrollo modular, escalable y mantenible.
 ## Funcionalidades
 
     Registro e inicio de sesión de usuarios.
-
     Registro de ingresos y gastos.
-
     Cálculo automático del balance.
-
     Actualización y eliminación de movimientos.
-
     Protección de rutas con autenticación JWT.
         
 ## Autores
